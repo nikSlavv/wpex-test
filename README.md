@@ -31,10 +31,14 @@ graph LR
 Il server agisce come relay trasparente. Non decifra il traffico, ma inoltra i pacchetti tra i peer autorizzati.
 
 ```bash
-# Esempio di avvio con binario WPEX
-./wpex --port 40000 \
-  --allow "CHIAVE_PUBBLICA_A" \
-  --allow "CHIAVE_PUBBLICA_B"
+# Esempio di avvio con docker WPEX
+docker run -d \
+  --name [name] \
+  --restart always \
+  -p [port]:[port]/udp \
+  ghcr.io/weiiwang01/wpex:latest \
+  --allow "INCOLLA_NUOVA_CHIAVE_PUBBLICA_A" \
+  --allow "INCOLLA_CHIAVE_PUBBLICA_B"
 
 ```
 
