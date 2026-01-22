@@ -8,11 +8,11 @@ Il sistema utilizza **WPEX** (WireGuard Peer Exchange) per gestire il routing de
 
 ```mermaid
 graph LR
-    SubnetA[LAN A\n172.20.100.0/24] -- WireGuard --> RouterA
-    RouterA[Router A\n(Docker/MikroTik)] -- UDP Tunnel --> ServerRelay
-    ServerRelay((VPS Pubblica\nWPEX Relay))
-    RouterB[Router B\n(Docker/MikroTik)] -- UDP Tunnel --> ServerRelay
-    SubnetB[LAN B\n172.20.200.0/24] -- WireGuard --> RouterB
+    SubnetA["LAN A (172.20.100.0/24)"] -- WireGuard --> RouterA
+    RouterA["Router A (.2)"] -- UDP Tunnel --> ServerRelay
+    ServerRelay(("VPS Pubblica (WPEX)"))
+    RouterB["Router B (.2)"] -- UDP Tunnel --> ServerRelay
+    SubnetB["LAN B (172.20.200.0/24)"] -- WireGuard --> RouterB
     
     RouterA <.-> RouterB
 
