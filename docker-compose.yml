@@ -16,6 +16,7 @@ services:
       wan_simulata:
       lan_a:
         ipv4_address: 10.100.10.2      # <--- CORRETTO (Non usare .1)
+      monitoring:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
       - net.ipv4.ip_forward=1
@@ -45,6 +46,7 @@ services:
       wan_simulata:
       lan_b:
         ipv4_address: 10.100.20.2      # <--- CORRETTO (Non usare .1)
+      monitoring:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
       - net.ipv4.ip_forward=1
@@ -72,3 +74,6 @@ networks:
     ipam:
       config:
         - subnet: 10.100.20.0/24
+  monitoring:
+    external: true
+    name: wpex_monitoring
